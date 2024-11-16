@@ -1,0 +1,26 @@
+/*Funcion para calcular MCD*/
+/*Elaborado por Daxel Janson */
+public class MCM {
+
+    // Método para calcular el Máximo Común Divisor (MCD) usando el algoritmo de Euclides
+    public static int mcd(int a, int b) {
+        while (b != 0) {
+            int temp = b;
+            b = a % b;
+            a = temp;
+        }
+        return a;
+    }
+
+    // Método para calcular el Mínimo Común Múltiplo (MCM)
+    public static int mcm(int a, int b) {
+        return Math.abs(a * b) / mcd(a, b);
+    }
+
+    public static void main(String[] args) {
+        int num1 = 12;
+        int num2 = 15;
+
+        System.out.println("El MCM de " + num1 + " y " + num2 + " es: " + mcm(num1, num2));
+    }
+}
